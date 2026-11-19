@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pathogen World | Rabies: The tiny invaders, deadly killers</title>
+  <meta name="description" content="Learn how rabies infects the body, its stages, how to prevent it, and why immediate treatment after exposure matters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101C2C;
+      --green-deep: #164B3C;
+      --green: #38B77A;
+      --white: #FFFFFF;
+      --gray: #F4F6F5;
+      --red: #D9534F;
+      --text: #1d2a3a;
+      --muted: #55657a;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(16, 28, 44, .10);
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --nav-h: 68px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-h);
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      line-height: 1.15;
+      margin: 0 0 .6em;
+      color: var(--navy);
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      max-width: 22ch;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0 0 1em;
+      max-width: 68ch;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      background: var(--green);
+      color: var(--navy);
+      padding: .6rem 1rem;
+      border-radius: 8px;
+      z-index: 200;
+    }
+
+    .skip-link:focus {
+      left: 8px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16, 28, 44, .92);
+      backdrop-filter: blur(10px);
+      height: var(--nav-h);
+    }
+
+    .nav {
+      width: min(1120px, 92%);
+      margin-inline: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .logo svg {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: .4rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: .5rem .9rem;
+      border-radius: 999px;
+      color: #cdd8e4;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: background .2s, color .2s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, .08);
+      color: var(--white);
+    }
+
+    .nav-links a.active {
+      background: var(--green);
+      color: var(--navy);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: transform .25s, opacity .25s;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .img-slot {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, var(--green-deep), var(--navy));
+    }
+
+    .img-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-slot.img-missing img {
+      visibility: hidden;
+    }
+
+    .img-slot figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.6rem 1rem .7rem;
+      font-size: .85rem;
+      color: var(--white);
+      background: linear-gradient(transparent, rgba(16, 28, 44, .85));
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - var(--nav-h));
+      display: grid;
+      align-items: center;
+      color: var(--white);
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(16, 28, 44, .94) 30%, rgba(22, 75, 60, .6));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, 92%);
+      margin-inline: auto;
+      padding: 4rem 0;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(3.2rem, 10vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: .1em;
+    }
+
+    .hero .tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 3vw, 1.9rem);
+      color: var(--green);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero p {
+      color: #dbe5ee;
+      max-width: 60ch;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: .8rem;
+      padding: .95rem 1.8rem;
+      background: var(--green);
+      color: var(--navy);
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(56, 183, 122, .4);
+    }
+
+    .hero-inner > * {
+      animation: rise .8s both;
+    }
+
+    .hero-inner > :nth-child(2) {
+      animation-delay: .12s;
+    }
+
+    .hero-inner > :nth-child(3) {
+      animation-delay: .24s;
+    }
+
+    .hero-inner > :nth-child(4) {
+      animation-delay: .36s;
+    }
+
+    .hero-inner > :nth-child(5) {
+      animation-delay: .48s;
+    }
+
+    .hero-inner > :nth-child(6) {
+      animation-delay: .6s;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .section {
+      padding: clamp(4rem, 9vw, 7rem) 0;
+    }
+
+    .section-light {
+      background: var(--gray);
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.6rem;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .facts .card {
+      border-top: 4px solid var(--green);
+    }
+
+    .facts p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 4.5rem;
+      position: relative;
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 1.7rem;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px;
+      background: linear-gradient(var(--green), var(--red));
+    }
+
+    .stage {
+      position: relative;
+    }
+
+    .stage-num {
+      position: absolute;
+      left: -4.5rem;
+      top: 0;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 800;
+      border: 4px solid var(--gray);
+    }
+
+    .stage:nth-child(1) .stage-num {
+      background: var(--green);
+      color: var(--navy);
+    }
+
+    .stage:nth-child(3) .stage-num {
+      background: #b8873a;
+    }
+
+    .stage:nth-child(4) .stage-num {
+      background: var(--red);
+    }
+
+    .stage-card {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 1.6rem;
+      padding: 1rem;
+      align-items: stretch;
+    }
+
+    .stage-card .img-slot {
+      min-height: 240px;
+      box-shadow: none;
+    }
+
+    .stage-text {
+      padding: .6rem .6rem .6rem 0;
+    }
+
+    .chips {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    .chips li {
+      background: var(--gray);
+      padding: .3rem .9rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .bullets {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    .bullets li {
+      margin-bottom: .3rem;
+    }
+
+    .alert {
+      border-left: 4px solid var(--red);
+      background: #fdeeed;
+      padding: .8rem 1rem;
+      border-radius: 0 10px 10px 0;
+      color: #7a2522;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    .prevention {
+      background: var(--navy);
+      color: #dbe5ee;
+    }
+
+    .prevention h2,
+    .prevention h3 {
+      color: var(--white);
+    }
+
+    .prevention .lead {
+      color: #aebccc;
+    }
+
+    .urgent {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      background: var(--red);
+      color: var(--white);
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 30px rgba(217, 83, 79, .35);
+    }
+
+    .urgent svg {
+      flex: none;
+    }
+
+    .urgent h3 {
+      margin-bottom: .3em;
+    }
+
+    .urgent p {
+      margin: 0;
+    }
+
+    .prev-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      align-items: stretch;
+      margin-bottom: 3rem;
+    }
+
+    .prev-img {
+      min-height: 280px;
+    }
+
+    .first-aid {
+      background: var(--green-deep);
+      color: #e6f4ec;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: none;
+    }
+
+    .first-aid strong {
+      color: var(--green);
+      font-size: 1.15em;
+    }
+
+    .sub {
+      font-size: 1.5rem;
+    }
+
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .tip {
+      background: rgba(255, 255, 255, .06);
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, .12);
+      transition: transform .2s, border-color .2s;
+    }
+
+    .tip:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+    }
+
+    .tip span {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: .4rem;
+    }
+
+    .tip p {
+      margin: 0;
+    }
+
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 3rem;
+      align-items: start;
+    }
+
+    .faq-wrap h2 {
+      grid-column: 1 / -1;
+    }
+
+    .faq-img {
+      aspect-ratio: 4 / 3;
+      position: sticky;
+      top: calc(var(--nav-h) + 20px);
+    }
+
+    .acc-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .acc-heading {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .acc-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.3rem 1.5rem;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--navy);
+      transition: background .2s;
+    }
+
+    .acc-btn:hover {
+      background: #eef5f1;
+    }
+
+    .acc-icon {
+      flex: none;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--navy);
+      font-size: 1.5rem;
+      line-height: 1;
+      font-family: var(--font-body);
+      font-weight: 600;
+      transition: background .2s, transform .3s;
+    }
+
+    .acc-btn[aria-expanded="true"] .acc-icon {
+      background: var(--navy);
+      color: var(--white);
+      transform: rotate(180deg);
+    }
+
+    .acc-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .4s ease;
+    }
+
+    .acc-panel.open {
+      grid-template-rows: 1fr;
+    }
+
+    .acc-body {
+      overflow: hidden;
+      padding: 0 1.5rem;
+    }
+
+    .acc-panel.open .acc-body {
+      padding-bottom: 1.2rem;
+    }
+
+    .acc-body h4 {
+      font-size: 1.1rem;
+      color: var(--green-deep);
+      margin-top: 1.2rem;
+    }
+
+    .banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--green-deep);
+      color: var(--white);
+    }
+
+    .banner-img {
+      border-radius: 0;
+      box-shadow: none;
+      min-height: 320px;
+    }
+
+    .banner-text {
+      padding: clamp(2rem, 6vw, 4.5rem);
+      align-self: center;
+    }
+
+    .banner-text h2 {
+      color: var(--white);
+    }
+
+    .banner-text p {
+      color: #d4eadf;
+    }
+
+    .footer {
+      background: #0a131f;
+      color: #aebccc;
+      padding: 4rem 0 1.5rem;
+      font-size: .95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1.4fr;
+      gap: 2.5rem;
+    }
+
+    .footer h4 {
+      color: var(--white);
+      font-size: 1.05rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--white);
+      margin-bottom: .2em;
+    }
+
+    .footer-tag {
+      color: var(--green);
+      font-style: italic;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer li {
+      margin-bottom: .4rem;
+    }
+
+    .footer a {
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer a:hover {
+      color: var(--green);
+    }
+
+    .sources-section {
+      background: var(--white);
+    }
+
+    .sources-intro {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .sources-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .source-card {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      padding: 1.5rem;
+      background: #f2f7f4;
+      border: 1px solid #dce9e1;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .source-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.1rem;
+    }
+
+    .source-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+      overflow-wrap: anywhere;
+    }
+
+    .source-card a {
+      color: var(--green-deep);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    .source-card a:hover {
+      color: var(--navy);
+    }
+
+    .copyright {
+      text-align: center;
+      margin: 3rem auto 0;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      max-width: none;
+      font-size: .85rem;
+    }
+
+    .to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--navy);
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .3s, visibility .3s;
+      z-index: 90;
+    }
+
+    .to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--navy);
+        padding: .8rem 4%;
+        gap: .2rem;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .stage-card,
+      .prev-grid,
+      .faq-wrap,
+      .banner,
+      .footer-grid,
+      .sources-list {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-img {
+        position: static;
+        aspect-ratio: 16 / 9;
+      }
+
+      .banner-img {
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .timeline {
+        padding-left: 3.4rem;
+      }
+
+      .timeline::before {
+        left: 1.05rem;
+      }
+
+      .stage-num {
+        left: -3.4rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: .9rem;
+      }
+
+      .urgent {
+        flex-direction: column;
+      }
+
+      .acc-btn {
+        font-size: 1.1rem;
+        padding: 1.1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Pathogen World home">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <g stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M16 3v5M16 24v5M3 16h5M24 16h5M7 7l3.5 3.5M21.5 21.5L25 25M25 7l-3.5 3.5M10.5 21.5L7 25"/>
+          </g>
+        </svg>
+        Pathogen World
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Rabies</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#prevention">Prevention</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" id="home">
+      <figure class="hero-bg img-slot">
+        <img src="images/rabies-01.jpg" alt="Microscopic view related to the rabies virus" fetchpriority="high">
+      </figure>
+
+      <div class="hero-inner">
+        <h1>Pathogen World</h1>
+        <p class="tagline">The tiny invaders, deadly killers.</p>
+
+        <p>Rabies has existed for at least 4,000 years, and it remains one of the deadliest viral diseases known to humanity. It is usually transmitted from animals to humans through bites or scratches contaminated with infected saliva.</p>
+
+        <p>The virus attacks the nervous system and brain. Many people have suffered and died from this disease, but how can we protect ourselves from it? How does rabies work? And lastly, how can we prevent ourselves from becoming infected?</p>
+
+        <p>This page will help you answer those questions.</p>
+
+        <a href="#about" class="btn">Explore the Science</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>About Rabies</h2>
+
+        <p class="lead">Rabies is caused by the virus <em>Lyssavirus rabies</em>. It travels from animals to people, and it targets the nervous system.</p>
+
+        <div class="facts">
+          <article class="card">
+            <h3>The cause</h3>
+            <p>A virus that infects mammals, both domesticated and wild.</p>
+          </article>
+
+          <article class="card">
+            <h3>The spread</h3>
+            <p>Infected saliva enters the body through a bite, a scratch, an open wound, or a mucous membrane.</p>
+          </article>
+
+          <article class="card">
+            <h3>The target</h3>
+            <p>The virus attacks the nervous system and brain, where it causes severe damage.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="how">
+      <div class="container">
+        <h2>When a Little Foreign Invader Enters Your Body</h2>
+        <p class="lead">Rabies moves through the body in four stages, from the bite site to the brain.</p>
+
+        <ol class="timeline">
+          <li class="stage reveal">
+            <span class="stage-num" aria-label="Stage 1">01</span>
+
+            <div class="card stage-card">
+              <figure class="img-slot">
+                <img src="images/rabies-02.jpg" alt="Illustration of the virus entering the body through a bite" loading="lazy">
+                <figcaption>Entry through a bite or scratch</figcaption>
+              </figure>
+
+              <div class="stage-text">
+                <h3>The Entry and Incubation Period</h3>
+                <p>Rabies, or <em>Lyssavirus rabies</em>, enters the body through a bite or scratch. A person can also become infected when saliva from a rabid animal comes into contact with an open wound or mucous membrane.</p>
+                <p>Inside the human body, the virus enters the incubation period, during which it may replicate slowly in muscle tissue near the bite site or remain localized before invading the peripheral nervous system.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="stage reveal">
+            <span class="stage-num" aria-label="Stage 2">02</span>
+
+            <div class="card stage-card">
+              <figure class="img-slot">
+                <img src="images/rabies-03.jpg" alt="Illustration of the virus traveling along nerves" loading="lazy">
+                <figcaption>Traveling along the nerves</figcaption>
+              </figure>
+
+              <div class="stage-text">
+                <h3>The First Stage: Traveling Through the Nerves</h3>
+                <p>Bites closer to the central nervous system, such as those on the head, neck, face, or hands, tend to have a shorter incubation period because the virus has a shorter distance to travel along the nerves to the brain.</p>
+                <p>During this stage, the virus begins traveling through the nerves toward the brain. Symptoms are usually not yet noticeable.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="stage reveal">
+            <span class="stage-num" aria-label="Stage 3">03</span>
+
+            <div class="card stage-card">
+              <figure class="img-slot">
+                <img src="images/rabies-04.jpg" alt="Illustration of early rabies symptoms" loading="lazy">
+                <figcaption>Early flu-like symptoms</figcaption>
+              </figure>
+
+              <div class="stage-text">
+                <h3>When Symptoms Begin to Appear</h3>
+                <p>As rabies reaches the central nervous system and spinal cord, it causes inflammation and begins producing flu-like symptoms. These may include:</p>
+
+                <ul class="chips">
+                  <li>Fever</li>
+                  <li>Headache</li>
+                  <li>General weakness</li>
+                </ul>
+
+                <p class="alert"><strong>This stage is extremely dangerous.</strong> Once clinical symptoms develop, rabies is almost always fatal.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="stage reveal">
+            <span class="stage-num" aria-label="Stage 4">04</span>
+
+            <div class="card stage-card">
+              <figure class="img-slot">
+                <img src="images/rabies-05.jpg" alt="Illustration of the virus affecting the brain" loading="lazy">
+                <figcaption>Invasion of the brain</figcaption>
+              </figure>
+
+              <div class="stage-text">
+                <h3>The Invasion Inside the Brain</h3>
+                <p>When rabies reaches the brain, it causes severe inflammation that can lead to life-threatening damage. Possible effects include:</p>
+
+                <ul class="bullets">
+                  <li>Severe neurological damage</li>
+                  <li>Disruption of communication between brain cells</li>
+                  <li>Extreme agitation</li>
+                  <li>Hallucinations and confusion</li>
+                  <li>Seizures</li>
+                  <li>Hydrophobia (fear of water, or difficulty swallowing it)</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section prevention" id="prevention">
+      <div class="container">
+        <h2>Prevention of This Tiny Invader</h2>
+        <p class="lead">A deadly disease can be prevented if proper treatment is received immediately after a possible exposure.</p>
+
+        <div class="urgent" role="alert">
+          <svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true">
+            <path d="M12 2 1 21h22L12 2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 9v5M12 17.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+
+          <div>
+            <h3>Protect Yourself: do not wait for symptoms</h3>
+            <p>Anyone who may have been exposed to rabies must visit the nearest Animal Bite Treatment Center (ABTC) as soon as possible. Do not wait until symptoms appear.</p>
+          </div>
+        </div>
+
+        <div class="prev-grid">
+          <figure class="img-slot prev-img">
+            <img src="images/rabies-06.jpg" alt="Washing a wound with soap and running water" loading="lazy">
+            <figcaption>Wash the wound right away.</figcaption>
+          </figure>
+
+          <article class="card first-aid">
+            <h3>First, wash the wound</h3>
+            <p>Before going to an Animal Bite Treatment Center, immediately wash the wound with running water and soap for at least <strong>15 minutes</strong>.</p>
+          </article>
+        </div>
+
+        <h3 class="sub">Additional prevention information</h3>
+
+        <div class="tips">
+          <article class="card tip">
+            <span aria-hidden="true">⚠</span>
+            <p>Avoid approaching unfamiliar or aggressive animals.</p>
+          </article>
+
+          <article class="card tip">
+            <span aria-hidden="true">💉</span>
+            <p>Have pets vaccinated against rabies.</p>
+          </article>
+
+          <article class="card tip">
+            <span aria-hidden="true">🐕</span>
+            <p>Keep pets under responsible supervision.</p>
+          </article>
+
+          <article class="card tip">
+            <span aria-hidden="true">🏥</span>
+            <p>Seek immediate medical attention after a possible exposure.</p>
+          </article>
+
+          <article class="card tip">
+            <span aria-hidden="true">📋</span>
+            <p>Follow the recommended post-exposure prophylaxis (PEP) provided by healthcare professionals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="faq">
+      <div class="container faq-wrap">
+        <h2>Frequently Asked Questions</h2>
+
+        <figure class="img-slot faq-img">
+          <img src="images/rabies-07.jpg" alt="Dogs and other animals that can carry rabies" loading="lazy">
+          <figcaption>Dogs are the most common source of human rabies worldwide.</figcaption>
+        </figure>
+
+        <div class="accordion">
+          <div class="acc-item">
+            <h3 class="acc-heading">
+              <button class="acc-btn" id="acc-btn-1" aria-expanded="false" aria-controls="acc-panel-1">
+                <span>What are the animals that carry rabies?</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+
+            <div class="acc-panel" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
+              <div class="acc-body">
+                <p>Rabies can infect mammals, including both domesticated and wild animals. Animals that may carry and transmit the virus include dogs, cats, bats, monkeys, foxes, raccoons, and other mammals. Dogs are the most common source of human rabies transmission worldwide.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <h3 class="acc-heading">
+              <button class="acc-btn" id="acc-btn-2" aria-expanded="false" aria-controls="acc-panel-2">
+                <span>What are the leading causes of rabies?</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+
+            <div class="acc-panel" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
+              <div class="acc-body">
+                <p>Rabies is usually transmitted through the bite of an infected animal. The virus is present in the infected animal's saliva and can enter the body when the skin is broken. Dogs are the leading source of human rabies transmission worldwide; bites and scratches from infected dogs account for approximately 99% of human rabies transmissions globally.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <h3 class="acc-heading">
+              <button class="acc-btn" id="acc-btn-3" aria-expanded="false" aria-controls="acc-panel-3">
+                <span>How do animals get infected by other animals?</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+
+            <div class="acc-panel" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
+              <div class="acc-body">
+                <p>Animals can become infected when a rabid animal bites them. The bite allows virus-containing saliva to enter the other animal's tissues. Infection may also occur if infected saliva comes into contact with an existing open wound or a mucous membrane, such as the eyes, nose, or mouth.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <h3 class="acc-heading">
+              <button class="acc-btn" id="acc-btn-4" aria-expanded="false" aria-controls="acc-panel-4">
+                <span>How can we protect our animals from getting infected?</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+
+            <div class="acc-panel" id="acc-panel-4" role="region" aria-labelledby="acc-btn-4">
+              <div class="acc-body">
+                <p>We can protect our animals through proper and up-to-date rabies vaccination. Keep pets under responsible supervision and avoid allowing them to roam freely or approach unfamiliar animals.</p>
+                <p>If your pet is bitten or scratched by an animal that may have rabies, contact a veterinarian or local animal health office immediately. Do not wait for symptoms to appear, and follow the professional's instructions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <figure class="img-slot banner-img">
+        <img src="images/rabies-08.jpg" alt="Awareness image about rabies prevention" loading="lazy">
+      </figure>
+
+      <div class="banner-text">
+        <h2>Suspect an exposure? Act today.</h2>
+        <p>Wash the wound for at least 15 minutes, then go to the nearest Animal Bite Treatment Center. Treatment works best when it starts early.</p>
+      </div>
+    </section>
+
+    <section class="section sources-section" id="sources">
+      <div class="container">
+        <h2>Sources</h2>
+        <p class="sources-intro">Learn more about rabies with the sources I used:</p>
+
+        <div class="sources-list">
+          <article class="source-card">
+            <h3>Rabies research article</h3>
+            <p>Research article</p>
+            <a href="https://doi.org/10.2147/RRTM.S16013" target="_blank" rel="noopener noreferrer">
+              https://doi.org/10.2147/RRTM.S16013
+            </a>
+          </article>
+
+          <article class="source-card">
+            <h3>World Health Organization</h3>
+            <p>Rabies fact sheet</p>
+            <a href="https://who.int/news-room/fact-sheets/detail/rabies" target="_blank" rel="noopener noreferrer">
+              https://who.int/news-room/fact-sheets/detail/rabies
+            </a>
+          </article>
+
+          <article class="source-card">
+            <h3>Cleveland Clinic</h3>
+            <p>Rabies: Symptoms, causes, and treatment</p>
+            <a href="https://clevelandclinic.org/health/diseases/13848-rabies" target="_blank" rel="noopener noreferrer">
+              https://clevelandclinic.org/health/diseases/13848-rabies
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-logo">Pathogen World</p>
+        <p class="footer-tag">"The tiny invaders, deadly killers."</p>
+        <p>An educational blog that explains how rabies infects the body, how it progresses, and how it can be prevented.</p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Rabies</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#prevention">Prevention</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#sources">Sources</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h4>Stay aware</h4>
+        <p>Rabies is preventable. Any bite or scratch from an animal needs immediate medical attention. This site is for education and does not replace professional medical advice.</p>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; <span id="year">2026</span> Pathogen World. All rights reserved.</p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.getElementById('nav-links');
+
+      function setMenu(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.classList.toggle('open', open);
+      }
+
+      toggle.addEventListener('click', () => {
+        setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => setMenu(false));
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') setMenu(false);
+      });
+
+      const links = [...menu.querySelectorAll('a')];
+      const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+
+      function updateActive() {
+        const y = window.scrollY + 120;
+        let current = 0;
+
+        sections.forEach((s, i) => {
+          if (s && s.offsetTop <= y) current = i;
+        });
+
+        links.forEach((a, i) => {
+          a.classList.toggle('active', i === current);
+
+          if (i === current) {
+            a.setAttribute('aria-current', 'true');
+          } else {
+            a.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      const toTop = document.getElementById('toTop');
+
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      let ticking = false;
+
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+
+        ticking = true;
+
+        requestAnimationFrame(() => {
+          updateActive();
+          toTop.classList.toggle('show', window.scrollY > 600);
+          ticking = false;
+        });
+      }, { passive: true });
+
+      updateActive();
+
+      const reveals = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(el => io.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('in-view'));
+      }
+
+      document.querySelectorAll('.acc-btn').forEach(btn => {
+        const panel = document.getElementById(btn.getAttribute('aria-controls'));
+        const icon = btn.querySelector('.acc-icon');
+
+        btn.addEventListener('click', () => {
+          const open = btn.getAttribute('aria-expanded') !== 'true';
+
+          btn.setAttribute('aria-expanded', String(open));
+          panel.classList.toggle('open', open);
+          icon.textContent = open ? '\u2212' : '+';
+        });
+      });
+
+      document.querySelectorAll('.img-slot img').forEach(img => {
+        const markMissing = () => {
+          img.closest('.img-slot').classList.add('img-missing');
+        };
+
+        img.addEventListener('error', markMissing);
+
+        if (img.complete && img.naturalWidth === 0) {
+          markMissing();
+        }
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
